@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Users
 Route::get('/user/delete/{user_id}', [HomeController::class, 'delete'])->name('user.delete');
+
+//Category
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::post('/category/insert', [CategoryController::class, 'insert'])->name('category.insert');

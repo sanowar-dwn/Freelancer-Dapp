@@ -3,6 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        @if(session('user_delete'))
+        <div class="alert-danger alert">{{ session('user_delete') }}</div>
+        @endif
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Hey <strong>{{ $logged_user }}</strong> </div>

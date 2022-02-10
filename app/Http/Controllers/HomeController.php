@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+Use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $logged_user = Auth::user()->name;
+        $all_users = User::where('id', '!=', Auth::id())->paginate(10);
+        return view('home',[
+            'logged_user' => $logged_user,
+            'all_users' => $all_users,
+        ]);
     }
 }

@@ -15,7 +15,8 @@
                         @csrf
                         <div class="mt-2">
                             <label for="">Category Name</label>
-                            <input type="text" name="category_name" value="{{ $category_info -> category_name }}" class="form-control">
+                            <input type="hidden" name="id" value="{{ $category_info ->id }}" class="form-control">
+                            <input type="text" name="category_name" value="{{ $category_info ->category_name }}" class="form-control">
                             @error('category_name')
                             <strong class="text-danger">{{ $message }}</strong>
                             @enderror

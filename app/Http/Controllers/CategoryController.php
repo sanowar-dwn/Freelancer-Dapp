@@ -43,4 +43,13 @@ class CategoryController extends Controller
             'category_info' => $category_info,
         ]);
     }
+
+
+    function update(Request $request)
+    {
+        Category::find($request->id)->update([
+            'category_name' => $request->category_name,
+        ]);
+        return back()->with('cat_update', 'Category Updated Successfully');
+    }
 }

@@ -32,4 +32,9 @@ class HomeController extends Controller
             'all_users' => $all_users,
         ]);
     }
+
+    function delete($user_id){
+        User::find($user_id)->delete();
+        return back()->with('user_delete', 'User deleted successfully');
+    }
 }

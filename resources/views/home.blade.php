@@ -30,7 +30,7 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at }}</td>
-                                <td><a href="#" class="btn btn-danger">DELETE</a></td>
+                                <td><a href="{{ Route('user.delete',$user->id) }}" class="btn btn-danger">DELETE</a></td>
                             </tr>
                         @endforeach
                     </table>

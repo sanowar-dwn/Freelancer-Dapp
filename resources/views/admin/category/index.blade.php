@@ -11,7 +11,7 @@
                     @if (session('category_insert_success'))
                         <div class="alert alert-success">{{ session('category_insert_success') }}</div>
                     @endif
-                    <form action="{{ url('/category/insert') }}" method="POST" class="form-horizontal">
+                    <form action="{{ url('/category/insert') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         <div class="mt-2">
                             <label for="">Category Name</label>
@@ -19,6 +19,10 @@
                             @error('category_name')
                             <strong class="text-danger">{{ $message }}</strong>
                             @enderror
+                        </div>
+                        <div class="mt-2">
+                            <label for="">Category Image</label>
+                            <input type="file" name="category_image" class="form-control">
                         </div>
                         <div class="mt-2">
                             <button class="btn btn-success"> ADD CATEGORY </button>

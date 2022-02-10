@@ -36,4 +36,11 @@ class CategoryController extends Controller
         ]);
         return back()->with('category_insert_success', 'Category inserted successfully');
     }
+
+    function edit($cat_id){
+        $category_info = Category::find($cat_id);
+        return view('admin.category.edit',[
+            'category_info' => $category_info,
+        ]);
+    }
 }

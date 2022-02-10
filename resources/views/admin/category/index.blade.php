@@ -12,13 +12,18 @@
                             <td>Sl</td>
                             <td>Category</td>
                             <td>Category Image</td>
+                            <td>Added By</td>
                             <td>Created At</td>
+                            <td>Edit</td>
                         </tr>
                         @foreach ($all_categories as $key => $category)
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $category->category_name }}</td>
                                 <td><img class="w-25" src="{{ asset('uploads/category/') }}/{{ $category->category_image }}" alt=""></td>
+                                <td>{{ App\Models\User::find($category->added_by)->name }}</td>
+                                <td>{{ $category->created_at }}</td>
+                                <td><a href="{{ Route('category.edit',$category->id) }}" class="btn btn-primary">EDIT</a></td>
                             </tr>
                         @endforeach
                     </table>

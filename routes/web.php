@@ -28,3 +28,4 @@ Route::get('/user/delete/{user_id}', [HomeController::class, 'delete'])->name('u
 //Category
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
 Route::post('/category/insert', [CategoryController::class, 'insert'])->name('category.insert');
+Route::get('/category/edit/{cat_id}', [CategoryController::class, 'edit'])->name('category.edit');

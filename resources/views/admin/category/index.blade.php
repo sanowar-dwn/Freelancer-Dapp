@@ -8,13 +8,20 @@
             <div class="card">
                 <div class="card-header">ADD CATEGORY</div>
                 <div class="card-body">
-                    <form action="{{ url('/category/insert') }}" method="POST" class="form-horizontal">
+                    <form action="{{ url('/category/insert') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         <div class="mt-2">
                             <label for="">Category Name</label>
                             <input type="text" name="category_name" class="form-control">
                             @error('category_name')
                                 <strong class="text-danger">{{ $message }}</strong>
+                            @enderror
+                        </div>
+                        <div class="mt-2">
+                            <label for="">Category Image</label>
+                            <input type="file" name="category_image" class="form-control">
+                            @error('category_image')
+                            <strong class="text-danger">{{ $message }}</strong>
                             @enderror
                         </div>
                         <div class="mt-2">

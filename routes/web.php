@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,16 +16,3 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-//Users
-Route::get('/user/delete/{user_id}', [HomeController::class, 'delete'])->name('user.delete');
-
-//Category
-Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
-Route::post('/category/insert', [CategoryController::class, 'insert'])->name('category.insert');
-Route::get('/category/edit/{cat_id}', [CategoryController::class, 'edit'])->name('category.edit');
-Route::post('/category/update', [CategoryController::class, 'update'])->name('category.update');

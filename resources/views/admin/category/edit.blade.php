@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">Edit Category</div>
                     <div class="card-body">
-                        <form action="" method="POST" class="form-horizontal">
+                        <form action="{{ url('/category/update') }}" method="POST" class="form-horizontal">
                             @csrf
                             <div class="mt-2">
                                 <label for="">Category Name</label>

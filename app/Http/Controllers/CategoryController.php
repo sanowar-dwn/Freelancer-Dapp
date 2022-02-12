@@ -56,11 +56,26 @@ class CategoryController extends Controller
         return back();
     }
 
+    //Category Delete
     function delete($cat_id)
     {
         Category::find($cat_id)->delete();
         return back()->with('cat_trash',
             "Category moved to trash"
         );
+    }
+
+    //Category Restore 
+
+    function restore($cat_id){
+        Category::onlyTrashed()->find($cat_id)->restore();
+        return back();
+    }
+
+    //Category force delete
+
+    function force_delete($cat_id){
+        Category::onlyTrashed()->find($cat_id)->forcedelete();
+        return back();
     }
 }

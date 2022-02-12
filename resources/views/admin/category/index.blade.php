@@ -40,6 +40,7 @@
                             <td>Category Image</td>
                             <td>Added By</td>
                             <td>Action</td>
+                            <td>Action</td>
                         </tr>
                         @foreach ($trashed_categories as $key => $category)
                             <tr>
@@ -47,7 +48,8 @@
                                 <td>{{ $category->category_name }}</td>
                                 <td><img class="w-25" src="{{ 'uploads/category' }}/{{ $category->category_image }}" alt=""></td>
                                 <td>{{ App\Models\User::find($category->added_by)->name }}</td>    
-                                <td><a href="{{ Route('category_delete',$category->id) }}" class="btn btn-danger">DELETE</a></td>                            
+                                <td><a href="{{ Route('category_restore',$category->id) }}" class="btn btn-info">RESTORE</a></td>                            
+                                <td><a href="{{ Route('category_force_delete',$category->id) }}" class="btn btn-danger">DELETE</a></td>                            
                             </tr>
                         @endforeach
                     </table>

@@ -32,3 +32,5 @@ Route::post('/category/insert', [CategoryController::class, 'insert'])->name('ca
 Route::get('/category/edit{cat_id}', [CategoryController::class, 'edit'])->name('category_edit');
 Route::post('/category/update', [CategoryController::class, 'update'])->name('category_update');
 Route::get('/category/delete/{cat_id}', [CategoryController::class, 'delete'])->name('category_delete');
+Route::get('/category/restore/{cat_id}', [CategoryController::class, 'restore'])->name('category_restore');
+Route::get('/category/force_delete/{cat_id}', [CategoryController::class, 'force_delete'])->name('category_force_delete');

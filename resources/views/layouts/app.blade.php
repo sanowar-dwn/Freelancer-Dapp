@@ -33,7 +33,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li><a href="{{ Route('category.index') }}">Category</a></li>
+                        <li class="px-2"><a href="{{ Route('category.index') }}">Category</a></li>
+                        <li class="px-2"><a href="{{ Route('subcategory.index') }}">SubCategory</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

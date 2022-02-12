@@ -35,6 +35,6 @@ class HomeController extends Controller
 
     function delete($user_id){
         User::find($user_id)->delete();
-        return back();
+        return back()->with('delete', "User Deleted Successfully");
     }
 }

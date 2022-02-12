@@ -8,14 +8,14 @@
             <div class="card">
                 <div class="card-header">ADD CATEGORY</div>
                 <div class="card-body">
-                    <form action="" mehtod="POST" class="form-horizontal">
+                    <form action="{{ url('/category/insert') }}" method="POST" class="form-horizontal">
                         @csrf
                         <div class="mt-2">
                             <label for="">Category Name</label>
                             <input type="text" name="category_name" class="form-control">
                         </div>
                         <div class="mt-2">
-                            <button class="btn btn-success">SUBMIT</button>
+                            <button type="submit"class="btn btn-success">SUBMIT</button>
                         </div>
                     </form>
                 </div>

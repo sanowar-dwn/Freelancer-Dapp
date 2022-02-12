@@ -11,10 +11,15 @@ use Image;
 
 class CategoryController extends Controller
 {
+    //Category list and form page
     function index(){
-        return view('admin.category.index');
+        $all_categories = Category::all();
+        return view('admin.category.index',[
+            'all_categories' => $all_categories,
+        ]);
     }
 
+    //Category Insert 
     function insert(CategoryRequest $request){
         $category_id = Category::insertGetId([
             'category_name' => $request->category_name,
@@ -31,5 +36,13 @@ class CategoryController extends Controller
             'category_image' => $category_image_name,
         ]);
         return back();
+    }
+
+    //Category edit
+    function edit($cat_id){
+        $category_info = Category::find($cat_id);
+        return view('admin.category.edit',[
+            'category_info' => $category_info,
+        ]);
     }
 }

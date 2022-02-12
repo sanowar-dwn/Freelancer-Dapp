@@ -3,7 +3,33 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-8"></div>
+        <div class="col-lg-8">
+        
+            <div class="card">
+                <div class="card-header">Category List</div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Sl</td>
+                            <td>Category</td>
+                            <td>Category Image</td>
+                            <td>Added By</td>
+                            <td>Action</td>
+                        </tr>
+                        @foreach ($all_categories as $key => $category)
+                            <tr>
+                                <td>{{ $key+1 }}</td>
+                                <td>{{ $category->category_name }}</td>
+                                <td><img class="w-25" src="{{ 'uploads/category' }}/{{ $category->category_image }}" alt=""></td>
+                                <td>{{ App\Models\User::find($category->added_by)->name }}</td>    
+                                <td><a href="{{ Route('category_edit',$category->id) }}" class="btn btn-info">EDIT</a></td>                            
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+
+        </div>
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-header">ADD CATEGORY</div>

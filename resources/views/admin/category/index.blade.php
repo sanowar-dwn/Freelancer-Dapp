@@ -13,6 +13,9 @@
                         <div class="mt-2">
                             <label for="">Category Name</label>
                             <input type="text" name="category_name" class="form-control">
+                            @error('category_name')
+                                <strong class="text-danger">{{ $message }}</strong>
+                            @enderror
                         </div>
                         <div class="mt-2">
                             <button type="submit"class="btn btn-success">SUBMIT</button>

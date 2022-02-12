@@ -14,8 +14,10 @@ class CategoryController extends Controller
     //Category list and form page
     function index(){
         $all_categories = Category::all();
+        $trashed_categories = Category::onlyTrashed()->get();
         return view('admin.category.index',[
             'all_categories' => $all_categories,
+            'trashed_categories' => $trashed_categories,
         ]);
     }
 
@@ -52,5 +54,13 @@ class CategoryController extends Controller
             'category_name'=>$request->category_name,
         ]);
         return back();
+    }
+
+    function delete($cat_id)
+    {
+        Category::find($cat_id)->delete();
+        return back()->with('cat_trash',
+            "Category moved to trash"
+        );
     }
 }

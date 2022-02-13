@@ -54,6 +54,18 @@ class CategoryController extends Controller
         Category::find($request -> id)->update([
             'category_name'=>$request->category_name,
         ]);
+        $delete_path = public_path('/uploads/category/') . Category::find($request->id)->category_image;
+        unlink($delete_path);
+
+        $category_image = $request->category_image;
+        $extension = $category_image->GetClientOriginalExtension();
+        $category_image_name = $request->id . '.' . $extension;
+
+        Image::make($category_image)->resize(300, 300)->save(public_path('uploads/category/' . $category_image_name));
+
+        Category::find($request->id)->update([
+            'category_image' => $category_image_name,
+        ]);
         return back();
     }
 

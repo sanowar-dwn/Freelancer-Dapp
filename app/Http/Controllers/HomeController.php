@@ -37,4 +37,8 @@ class HomeController extends Controller
         User::find($user_id)->delete();
         return back()->with('delete', "User Deleted Successfully");
     }
+
+    function dashboard(){
+        return view('layouts.dashboard');
+    }
 }

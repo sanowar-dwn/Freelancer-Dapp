@@ -39,3 +39,6 @@ Route::get('/category/force_delete/{cat_id}', [CategoryController::class, 'force
 //SubCategory
 Route::get('/subcategory', [SubcategoryController::class, 'index'])->name('subcategory.index');
 Route::post('/subcategory/insert', [SubcategoryController::class, 'insert'])->name('subcategory.insert');
+
+//dashbaord
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index.dashboard');

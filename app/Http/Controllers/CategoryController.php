@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Models\Subcategory;
 use Auth;
 use Carbon\Carbon;
 use Image;
@@ -75,6 +76,12 @@ class CategoryController extends Controller
     //Category force delete
 
     function force_delete($cat_id){
+        $subcategories = Subcategory::where('category_id', $cat_id)->get();
+        foreach ($subcategories as $sub) {
+            Subcategory::find($sub->id)->delete();
+        }
+        $delete_path = public_path('/uploads/category/').Category::onlyTrashed()->find($cat_id)->category_image;
+        unlink($delete_path);
         Category::onlyTrashed()->find($cat_id)->forcedelete();
         return back();
     }

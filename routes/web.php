@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubcategoryController;
 
 /*
@@ -42,3 +43,9 @@ Route::post('/subcategory/insert', [SubcategoryController::class, 'insert'])->na
 
 //dashbaord
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index.dashboard');
+
+//Profile 
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::post('/profile/name_change', [ProfileController::class, 'name_change'])->name('profile.name.change');
+

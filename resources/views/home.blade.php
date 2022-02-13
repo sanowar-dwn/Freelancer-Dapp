@@ -1,12 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
         @if (session('delete'))
         <div class="alert alert-danger">{{ session('delete') }}</div>            
         @endif
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Hey <strong>{{ $logged_user }}</strong> </div>
 
@@ -43,6 +41,4 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
 @endsection

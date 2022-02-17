@@ -48,4 +48,5 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index.dash
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::post('/profile/name_change', [ProfileController::class, 'name_change'])->name('profile.name.change');
+Route::post('/profile/pass_change', [ProfileController::class, 'pass_change'])->name('profile.pass.change');
 

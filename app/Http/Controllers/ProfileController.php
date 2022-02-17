@@ -18,4 +18,8 @@ class ProfileController extends Controller
         ]);
         return back();
     }
+
+    function pass_change(Request $request){
+        
+    }
 }

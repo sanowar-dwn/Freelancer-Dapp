@@ -22,7 +22,7 @@
     <div class="card">
         <div class="card-header">Update Password</div>
         <div class="card-body">
-            <form action="{{ url('/profile/name_change') }}" method="POST" class="form-horizontal">
+            <form action="{{ url('/profile/pass_change') }}" method="POST" class="form-horizontal">
                 @csrf
                 <div class="mt-2">
                     <label for="">Old Password</label>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="mt-2">
                     <label for="">New Password</label>
-                    <input type="text" name="new_password" class="form-control">
+                    <input type="text" name="password" class="form-control">
                 </div>
                 <div class="mt-2">
                     <label for="">Confirm new password</label>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class ProfileController extends Controller
 {
@@ -20,6 +22,16 @@ class ProfileController extends Controller
     }
 
     function pass_change(Request $request){
-        
+        $request->validate([
+            'old_password' => 'required',
+            'password' => 'required|confirmed',
+            'password' => Password::min(8)
+            ->letters()
+            ->mixedCase()
+            ->numbers()
+            ->symbols()
+            ->uncompromised(),
+            'password_confirmation' => 'required',
+        ]);
     }
 }

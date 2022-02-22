@@ -27,14 +27,23 @@
                 <div class="mt-2">
                     <label for="">Old Password</label>
                     <input type="password" name="old_password" class="form-control">
+                    @error('old_password')
+                        <span class="text-danger"> {{ $message }} </span>
+                    @enderror
                 </div>
                 <div class="mt-2">
                     <label for="">New Password</label>
-                    <input type="text" name="password" class="form-control">
+                    <input type="password" name="password" class="form-control">
+                    @error('password')
+                        <span class="text-danger"> {{ $message }} </span>
+                    @enderror
                 </div>
                 <div class="mt-2">
                     <label for="">Confirm new password</label>
-                    <input type="text" name="confirm_password" class="form-control">
+                    <input type="password" name="password_confirmation" class="form-control">
+                    @error('password_confirmation')
+                        <span class="text-danger"> {{ $message }} </span>
+                    @enderror
                 </div>
                 <div class="mt-2">
                     <button class="btn btn-success" type="submit">UPDATE</button>

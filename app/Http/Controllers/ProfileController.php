@@ -7,6 +7,7 @@ use App\Models\User;
 use Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -29,9 +30,16 @@ class ProfileController extends Controller
             ->letters()
             ->mixedCase()
             ->numbers()
-            ->symbols()
-            ->uncompromised(),
+            ->symbols(),
             'password_confirmation' => 'required',
         ]);
+        if(Hash::check($request->old_password, Auth::user()->password)){
+            User::find(Auth::id())->update([
+                'password' => bcrypt($request->password),
+            ]);
+        }
+        else{
+            return back()->with('password_error', 'You have entered an incorrect password');
+        }
     }
 }

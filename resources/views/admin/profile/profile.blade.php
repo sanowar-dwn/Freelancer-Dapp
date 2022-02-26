@@ -30,6 +30,11 @@
                     @error('old_password')
                         <span class="text-danger"> {{ $message }} </span>
                     @enderror
+                    @if (session('password_error'))
+                        <div class="alert alert-warning">
+                            {{ session('password_error') }}
+                        </div>
+                    @endif
                 </div>
                 <div class="mt-2">
                     <label for="">New Password</label>

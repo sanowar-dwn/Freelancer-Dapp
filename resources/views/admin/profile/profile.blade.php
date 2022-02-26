@@ -57,4 +57,26 @@
         </div>
     </div>
 </div>
+<div class="col-lg-4">
+    <div class="card">
+        <div class="card-header">Update Photo</div>
+        <div class="card-body">
+            <form action="{{ url('/profile/photo_change') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                @csrf
+                <div class="input-group mt-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="profile_photo">
+                        <label class="custom-file-label">Choose file</label>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <button class="btn btn-success" type="submit">UPDATE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection

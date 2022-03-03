@@ -11,7 +11,7 @@
                         <form action="" method="post" enctype="multipart/form">
                             @csrf
                             <div class="form-group">
-                                <select name="category_id" class="form-control">
+                                <select name="category_id" class="form-control" id="category_id">
                                     <option>-- Select Category --</option>
                                     @foreach ($all_categories as $category) 
                                         <option value="{{ $category->id }}">{{ $category->category_name }}</option>
@@ -19,11 +19,8 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select name="subcategory_id" class="form-control">
-                                    <option>-- Select Sub Category --</option>
-                                    @foreach ($all_subcategories as $subcategory) 
-                                        <option value="{{ $subcategory->id }}">{{ $subcategory->subcategory_name }}</option>
-                                    @endforeach
+                                <select id="subcategory_name" name="subcategory_id" class="form-control">
+                                    <option value="">-- Select Sub Category --</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -55,4 +52,25 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js_script')
+    <script>
+        $('#category_id').change(function(){
+            var category_id = $(this).val();
+            $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+            $.ajax({
+                type: 'POST',
+                url: 'getCategory',
+                data: {'category_id' : category_id},
+                success:function(data){
+                    $('#subcategory_name').html(data);
+                }
+            });
+        })
+    </script>
 @endsection

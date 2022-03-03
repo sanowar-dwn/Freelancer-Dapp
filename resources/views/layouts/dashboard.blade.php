@@ -75,7 +75,7 @@
                         <ul class="navbar-nav header-right">
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
-                                    <img src="{{ asset('uploads/profile') }}/{{ Auth::user()->profile_photo }}" width="20" alt="" />
+                                    {{-- <img src="{{ asset('uploads/profile') }}/{{ Auth::user()->profile_photo }}" width="20" alt="" /> --}}
                                     <div class="header-info">
                                         <span class="text-black"><strong></strong></span>
                                         <p class="fs-12 mb-0">Super Admin</p>
@@ -155,6 +155,14 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ Route('subcategory.index') }}">Add Sub Category</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-networking"></i>
+                            <span class="nav-text">Products</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ Route('product.index') }}">Add Products</a></li>
                         </ul>
                     </li>
             </div>

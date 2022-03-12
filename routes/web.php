@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubcategoryController;
@@ -19,9 +20,8 @@ use App\Http\Controllers\InventoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontendController::class, 'index'])->name('index');
+
 
 Auth::routes();
 

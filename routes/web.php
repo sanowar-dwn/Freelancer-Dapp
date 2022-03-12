@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,4 +57,11 @@ Route::post('/profile/photo_change', [ProfileController::class, 'photo_change'])
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 Route::post('/getCategory', [ProductController::class, 'getCategory']);
 Route::post('/product/insert', [ProductController::class, 'insert'])->name('product.insert');
+//Inventory
+Route::get('/inventory/{product_id}', [InventoryController::class, 'index'])->name('inventory.index');
+Route::post('/inventory/color/insert', [InventoryController::class, 'color_insert']);
+Route::get('/inventory/color', [InventoryController::class, 'color'])->name('inventory.color');
+Route::get('/inventory/size', [InventoryController::class, 'size'])->name('inventory.size');
+Route::post('/inventory/size/insert', [InventoryController::class, 'size_insert']);
+Route::post('/inventory/insert', [InventoryController::class, 'inventory_insert'])->name('inventory.insert');
 

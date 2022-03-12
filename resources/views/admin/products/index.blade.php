@@ -15,6 +15,7 @@
                                 <td>After Discount Price</td>
                                 <td>Brand</td>
                                 <td>Image</td>
+                                <td>Action</td>
                             </tr>
                             @foreach ($all_products as $key=> $product) 
                                 <tr>
@@ -24,6 +25,7 @@
                                     <td>{{ $product->after_discount }}</td>
                                     <td>{{ $product->brand }}</td>
                                     <td><img class="w-50" src="{{ asset('uploads/product') }}/{{ $product->preview }}" alt=""></td>
+                                    <td><a href="{{ url('/inventory/'.$product->id) }}" class="btn btn-primary">Inventory</a></td>
                                 </tr>
                             @endforeach
                         </table>

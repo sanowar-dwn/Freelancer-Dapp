@@ -55,4 +55,5 @@ Route::post('/profile/photo_change', [ProfileController::class, 'photo_change'])
 //Product
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 Route::post('/getCategory', [ProductController::class, 'getCategory']);
+Route::post('/product/insert', [ProductController::class, 'insert'])->name('product.insert');
 

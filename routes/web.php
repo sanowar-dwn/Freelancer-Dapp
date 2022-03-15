@@ -21,6 +21,7 @@ use App\Http\Controllers\InventoryController;
 */
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/master', [FrontendController::class, 'master'])->name('frontend.master');
 
 
 Auth::routes();

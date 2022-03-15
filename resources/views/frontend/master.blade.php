@@ -107,13 +107,9 @@
                                     <div class="select_option mb-0 clearfix">
                                         <select>
                                             <option data-display="All Categories">Select A Category</option>
-                                            <option value="1">New Arrival Products</option>
-                                            <option value="2">Most Popular Products</option>
-                                            <option value="3">Deals of the day</option>
-                                            <option value="4">Mobile Accessories</option>
-                                            <option value="5">Computer Accessories</option>
-                                            <option value="6">Consumer Electronics</option>
-                                            <option value="7">Automobiles & Motorcycles</option>
+                                            @foreach ($all_categories as $category)
+                                            <option value="1">{{ $category->category_name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form_item">
@@ -177,28 +173,10 @@
                                 <div class="allcategories_collapse" id="allcategories_collapse">
                                     <div class="card card-body">
                                         <ul class="allcategories_list ul_li_block">
-                                            <li><a href="shop_grid.html"><i class="icon icon-Starship"></i> New Arrival
-                                                    Products</a></li>
-                                            <li><a href="shop_list.html"><i class="icon icon-WorldWide"></i> Most
-                                                    Popular Products</a></li>
-                                            <li><a href="shop_grid.html"><i class="icon icon-Star"></i> Deals of the
-                                                    day</a></li>
-                                            <li><a href="shop_list.html"><i class="icon icon-Phone"></i> Mobile
-                                                    Accessories</a></li>
-                                            <li><a href="shop_grid.html"><i class="icon icon-DesktopMonitor"></i>
-                                                    Computer Accessories</a></li>
-                                            <li><a href="shop_list.html"><i class="icon icon-Bulb"></i> Consumer
-                                                    Electronics</a></li>
-                                            <li><a href="shop_grid.html"><i class="icon icon-Car"></i> Automobiles &
-                                                    Motorcycles</a></li>
-                                            <li><a href="shop_list.html"><i class="icon icon-Phone"></i> Mobile
-                                                    Accessories</a></li>
-                                            <li><a href="shop_grid.html"><i class="icon icon-DesktopMonitor"></i>
-                                                    Computer Accessories</a></li>
-                                            <li><a href="shop_list.html"><i class="icon icon-Bulb"></i> Consumer
-                                                    Electronics</a></li>
-                                            <li><a href="shop_grid.html"><i class="icon icon-Car"></i> Automobiles &
-                                                    Motorcycles</a></li>
+                                            @foreach ($all_categories as $category)
+                                                
+                                            <li><a href="shop_grid.html"><i class="icon icon-Starship"></i>{{$category->category_name}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
@@ -250,7 +228,7 @@
 
         <!-- main body - start
         ================================================== -->
-@yield('content')
+        @yield('content')
         <!-- main body - end
         ================================================== -->
 

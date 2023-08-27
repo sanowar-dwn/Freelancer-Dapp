@@ -1,64 +1,20 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## ?? **Inspiration**
+The inspiration behind the Freelancer Dapp project was to revolutionize the freelance industry by leveraging blockchain technology. The aim was to address common pain points faced by freelancers and clients, such as payment disputes, lack of transparency, and communication issues. By creating a decentralized platform, the goal was to foster an environment of trust, accountability, and efficiency.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## ?? **What It Does**
+The Freelancer Dapp serves as a decentralized platform that facilitates seamless collaboration between freelancers and clients. It allows clients to post projects, freelancers to submit proposals, and clients to assign projects based on submitted proposals. The platform also incorporates features like escrow management, work submission, and payment release. In essence, it streamlines the entire lifecycle of a freelance project, ensuring transparency and fairness for all parties involved.
 
-## About Laravel
+## ????? **How I Built It**
+I built the Freelancer Dapp using Solidity, the programming language for Ethereum smart contracts. The project's architecture was carefully designed to accommodate the various functionalities required for freelance project management. I implemented features like project posting, proposal submission, assignment, escrow handling, work submission, and payment release. My development process involved coding, testing, and iterating to ensure a robust and secure platform.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ?? **Challenges I Ran Into**
+As I worked solo on the project, I wasn't able to create a frontend for the project. My focus was on the backend as it was the main subject of the hackathon. Also, working solo meant I was the only one developing & testing my application, creating the demo video, and writing code documentation & project documentation, and many more all at the same time.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ?? **Accomplishments That I'm Proud Of**
+ I take pride in creating a functional and secure platform that addresses real-world challenges in the freelance industry. Implementing a range of features, from proposal submission to payment release, and ensuring proper access control and data management, showcased my ability to build complex blockchain-based applications. My accomplishments extend beyond the functional aspects, as I successfully combined technology and practical solutions to empower freelancers and clients.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ?? **What I Learned**
+Developing the Freelancer Dapp provided me with a deep understanding of Solidity, smart contracts, and decentralized application development. I learned how to handle complex interactions, design secure architectures, and incorporate real-world scenarios into smart contract logic. Additionally, the project enhanced my problem-solving skills, adaptability to challenges, and proficiency in working with decentralized systems.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## ?? **What's Next for Freelance Dapp**
+ Moving forward, I plan to refine and enhance the Freelancer Dapp's user experience and create a front-end for user interaction. I'll focus on scalability to accommodate a growing user base and explore ways to incentivize freelancers and clients to participate. I look forward to expanding its capabilities by creating more functionalities that will benefit users on the platform.
